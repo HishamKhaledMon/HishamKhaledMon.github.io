@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tickwell Privacy Policy. Learn how Tickwell handles information, cookies, local storage, and user privacy.">
+
+    <meta name="keywords" content="Tickwell, Privacy Policy, privacy, study timer, cookies">
+
+    <meta name="author" content="Hesham Khaled">
+
+    <title>Privacy Policy - Tickwell</title>
+
+    <link rel="icon" type="image/png" href="./brain.png">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Tickwell Menu -->
+    <div class="menu-container">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            <span class="arrow">▼</span>
+        </button>
+
+        <nav class="dropdown-menu" id="dropdownMenu">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Tickwell</a>
+
+            <a href="how-to-use.html">How to Use</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- Privacy Policy -->
+    <main class="about-page">
+
+        <img
+            src="./brain.png"
+            alt="Tickwell"
+            class="about-logo"
+        >
+
+        <h1>Privacy Policy</h1>
+
+        <p>
+            Your privacy is important to us. This Privacy Policy explains
+            how Tickwell handles information when you use our website.
+        </p>
+
+
+        <h2>Information We Collect</h2>
+
+        <p>
+            Tickwell is designed to be a simple study timer. We do not
+            require you to create an account or provide personal information
+            to use the main timer features.
+        </p>
+
+
+        <h2>Local Storage</h2>
+
+        <p>
+            Tickwell may use your browser's local storage to remember
+            certain preferences, such as your selected theme.
+            This information is stored on your device and is not directly
+            sent to us.
+        </p>
+
+
+        <h2>Cookies</h2>
+
+        <p>
+            Tickwell does not currently require cookies for the basic
+            operation of the study timer.
+        </p>
+
+
+        <h2>Third-Party Services</h2>
+
+        <p>
+            Tickwell may use third-party services in the future.
+            If third-party services are added, this Privacy Policy may
+            be updated to explain what information those services may
+            collect and how they are used.
+        </p>
+
+
+        <h2>Children's Privacy</h2>
+
+        <p>
+            Tickwell is a general-purpose study timer and does not
+            knowingly require children to provide personal information
+            to use the basic features of the website.
+        </p>
+
+
+        <h2>Data Security</h2>
+
+        <p>
+            We aim to keep Tickwell simple and minimize the amount of
+            information required to use the website. Since no website
+            or online service can guarantee complete security, users
+            should avoid submitting unnecessary personal information.
+        </p>
+
+
+        <h2>Changes to This Privacy Policy</h2>
+
+        <p>
+            This Privacy Policy may be updated from time to time if
+            Tickwell's features or services change. Any changes will
+            be published on this page.
+        </p>
+
+
+        <h2>Contact</h2>
+
+        <p>
+            If you have questions about this Privacy Policy or Tickwell,
+            you can contact us through the Contact page.
+        </p>
+
+
+        <p>
+            <strong>Last updated: October 2026</strong>
+        </p>
+
+    </main>
+
+
+    <script>
+
+        /* Remember Theme */
+        try {
+            if (localStorage.getItem("theme") === "light") {
+                document.body.classList.add("light-mode");
+            }
+        } catch (e) {}
+        
+        const menuButton = document.getElementById("menuButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        const menuContainer = document.querySelector(".menu-container");
+
+        menuButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            menuContainer.classList.toggle("open");
+
+            const isOpen = menuContainer.classList.contains("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!menuContainer.contains(event.target)) {
+                menuContainer.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                menuContainer.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
+
+</body>
+</html>

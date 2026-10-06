@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Contact Tickwell. Send feedback, suggestions, or report a problem with the Tickwell study timer.">
+
+    <meta name="keywords"
+        content="Tickwell, contact Tickwell, Tickwell feedback, study timer">
+
+    <meta name="author" content="Hesham Khaled">
+
+    <title>Contact Tickwell</title>
+
+    <link rel="icon" type="image/png" href="./brain.png">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+
+        .contact-page {
+            width: min(90%, 650px);
+            margin: 120px auto 60px;
+            text-align: center;
+        }
+
+        .contact-page h1 {
+            margin-bottom: 20px;
+        }
+
+        .contact-page p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .contact-form textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .send-button {
+            margin-top: 10px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .send-button:hover {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0, 255, 120, 0.12);
+            border: 1px solid rgba(0, 255, 120, 0.35);
+        }
+
+        .error-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 0, 0, 0.12);
+            border: 1px solid rgba(255, 0, 0, 0.35);
+        }
+
+        /* Bright Mode */
+
+        body.light-mode .contact-form input,
+        body.light-mode .contact-form textarea {
+            background: rgba(0, 0, 0, 0.06);
+            color: black;
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .contact-form input:focus,
+        body.light-mode .contact-form textarea:focus {
+            border-color: black;
+        }
+
+        body.light-mode .send-button {
+            background: black;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+
+            .contact-page {
+                margin-top: 100px;
+            }
+
+            .contact-page h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Tickwell Menu -->
+
+    <div class="menu-container">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            <span class="arrow">▼</span>
+
+        </button>
+
+
+        <nav class="dropdown-menu" id="dropdownMenu">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Tickwell</a>
+
+            <a href="how-to-use.html">How to Use</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+
+
+    <!-- Contact -->
+
+    <main class="contact-page">
+
+        <img
+            src="./brain.png"
+            alt="Tickwell"
+            class="about-logo"
+        >
+
+
+        <h1>Contact Tickwell</h1>
+
+
+        <p>
+            Have a question, suggestion, or found a problem?
+            Send us a message and we will receive it through our
+            contact system.
+        </p>
+
+
+
+        <!-- Contact Form -->
+
+        <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/mljgdgwn"
+            method="POST">
+
+
+            <label for="name">
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message..."
+                required
+            ></textarea>
+
+
+
+            <button
+                type="submit"
+                class="send-button"
+                id="sendButton">
+
+                Send Message
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- Messages -->
+
+        <div
+            class="success-message"
+            id="successMessage">
+
+            Your message has been sent successfully. Thank you for contacting Tickwell!
+
+        </div>
+
+
+        <div
+            class="error-message"
+            id="errorMessage">
+
+            Something went wrong. Please try again.
+
+        </div>
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        /* =========================
+           Menu
+        ========================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const dropdownMenu =
+            document.getElementById("dropdownMenu");
+
+        const menuContainer =
+            document.querySelector(".menu-container");
+
+
+        menuButton.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            menuContainer.classList.toggle("open");
+
+            const isOpen =
+                menuContainer.classList.contains("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        dropdownMenu.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+        });
+
+
+        document.addEventListener("click", function () {
+
+            menuContainer.classList.remove("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                menuContainer.classList.remove("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+
+        /* =========================
+           Remember Theme
+        ========================= */
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+        }
+
+
+
+        /* =========================
+           Contact Form
+        ========================= */
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const sendButton =
+            document.getElementById("sendButton");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+        const errorMessage =
+            document.getElementById("errorMessage");
+
+
+        contactForm.addEventListener("submit", async function (event) {
+
+            event.preventDefault();
+
+
+            sendButton.disabled = true;
+
+            sendButton.textContent = "Sending...";
+
+            successMessage.style.display = "none";
+
+            errorMessage.style.display = "none";
+
+
+            const formData =
+                new FormData(contactForm);
+
+
+            try {
+
+                const response = await fetch(
+                    contactForm.action,
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
+
+
+                if (response.ok) {
+
+                    contactForm.reset();
+
+                    successMessage.style.display = "block";
+
+                } else {
+
+                    errorMessage.style.display = "block";
+
+                }
+
+            } catch (error) {
+
+                errorMessage.style.display = "block";
+
+            }
+
+
+            sendButton.disabled = false;
+
+            sendButton.textContent = "Send Message";
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,505 @@
+body{
+    background-color: black;
+    color: white;
+
+    transition:
+        background-color 0.8s ease,
+        color 0.8s ease;
+}
+
+
+.image{
+    margin-top: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+
+.timer{
+    margin-top: 200px;
+
+    color: white;
+
+    font-size: 150px;
+
+    font-family: fantasy;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        color 0.8s ease,
+        margin 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.buttons{
+    width: 320px;
+
+    margin: auto;
+
+    position: relative;
+
+    margin-top: 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        transform 0.8s ease-in-out;
+}
+
+
+.buttons.running{
+    transform:
+        translateY(calc(95vh - 500px));
+}
+
+
+body.fullscreen-mode{
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+body.fullscreen-mode header{
+    display: none;
+}
+
+
+body.fullscreen-mode .buttons{
+    display: none;
+}
+
+
+body.fullscreen-mode .timer{
+    margin: 0;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.start{
+    font-size: 15px;
+
+    font-weight: bold;
+
+    font-family:
+        'Courier New',
+        Courier,
+        monospace;
+
+    color: white;
+
+    background-color:
+        rgb(27, 27, 27);
+
+    border: solid 1px #333439;
+
+    border-radius: 16%;
+
+    padding: 13px 13px;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.8s ease,
+        color 0.8s ease,
+        border-color 0.8s ease,
+        transform 0.2s ease;
+}
+
+
+.reset{
+    font-size: 15px;
+
+    color: white;
+
+    background-color:
+        rgb(27, 27, 27);
+
+    border: solid 1px #333439;
+
+    border-radius: 16%;
+
+    padding: 14px 13px;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.8s ease,
+        color 0.8s ease,
+        border-color 0.8s ease,
+        transform 0.2s ease;
+}
+
+
+.fall{
+    font-size: 15px;
+
+    font-weight: bold;
+
+    font-family:
+        'Courier New',
+        Courier,
+        monospace;
+
+    color: white;
+
+    background-color:
+        rgb(27, 27, 27);
+
+    border: solid 1px #333439;
+
+    border-radius: 20%;
+
+    padding: 12px 20px;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.8s ease,
+        color 0.8s ease,
+        border-color 0.8s ease,
+        transform 0.2s ease;
+}
+
+
+.thems{
+    font-size: 15px;
+
+    font-weight: bold;
+
+    font-family:
+        'Courier New',
+        Courier,
+        monospace;
+
+    color: white;
+
+    background-color:
+        rgb(27, 27, 27);
+
+    border: solid 1px #333439;
+
+    border-radius: 20%;
+
+    padding: 12px 20px;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.8s ease,
+        color 0.8s ease,
+        border-color 0.8s ease,
+        transform 0.2s ease;
+}
+
+
+.buttons:hover{
+    opacity: 0.8;
+}
+
+
+.start:hover{
+    background-color:
+        rgb(72, 73, 75);
+
+    transform: scale(1.10);
+}
+
+
+.reset:hover{
+    background-color:
+        rgb(72, 73, 75);
+
+    transform: scale(1.10);
+}
+
+
+.fall:hover{
+    background-color:
+        rgb(72, 73, 75);
+
+    transform: scale(1.10);
+}
+
+
+.thems:hover{
+    background-color:
+        rgb(72, 73, 75);
+
+    transform: scale(1.10);
+}
+
+
+body.light-mode{
+    background-color: white;
+    color: black;
+}
+
+
+body.light-mode .timer{
+    color: black;
+}
+
+
+body.light-mode .start,
+body.light-mode .reset,
+body.light-mode .fall,
+body.light-mode .thems{
+
+    color: black;
+
+    background-color:
+        rgb(235, 235, 235);
+
+    border-color: #cccccc;
+}
+
+
+body.light-mode .start:hover,
+body.light-mode .reset:hover,
+body.light-mode .fall:hover,
+body.light-mode .thems:hover{
+
+    background-color:
+        rgb(210, 210, 210);
+}
+
+
+/* ========================= */
+/* Tickwell Navigation Menu */
+/* ========================= */
+
+.menu-container{
+    position: fixed;
+
+    top: 18px;
+    right: 20px;
+
+    z-index: 1000;
+}
+
+
+.menu-button{
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.menu-button:hover{
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+.arrow{
+    font-size: 22px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.menu-container.open .arrow{
+    transform:
+        rotate(180deg);
+}
+
+
+.dropdown-menu{
+    position: absolute;
+
+    top: 48px;
+    right: 0;
+
+    width: 190px;
+
+    padding: 8px;
+
+    background:
+        rgba(25, 25, 25, 0.96);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-10px) scale(0.96);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+.menu-container.open .dropdown-menu{
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0) scale(1);
+}
+
+
+.dropdown-menu a{
+    display: block;
+
+    padding: 11px 13px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dropdown-menu a:hover{
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    transform:
+        translateX(-2px);
+}
+
+
+body.light-mode .menu-button{
+    background:
+        rgba(0, 0, 0, 0.08);
+
+    color: #000000;
+}
+
+
+body.light-mode .menu-button:hover{
+    background:
+        rgba(0, 0, 0, 0.14);
+}
+
+
+body.light-mode .dropdown-menu{
+    background:
+        rgba(245, 245, 245, 0.97);
+
+    border-color:
+        rgba(0, 0, 0, 0.08);
+}
+
+
+body.light-mode .dropdown-menu a{
+    color: #000000;
+}
+
+
+body.light-mode .dropdown-menu a:hover{
+    background:
+        rgba(0, 0, 0, 0.07);
+}
+
+
+body.fullscreen-mode .menu-container{
+    display: none;
+}
+
+
+@media (max-width: 600px){
+
+    .menu-container{
+        top: 12px;
+        right: 12px;
+    }
+
+    .menu-button{
+        width: 34px;
+        height: 34px;
+    }
+
+    .dropdown-menu{
+        width: 175px;
+        top: 43px;
+    }
+
+    .dropdown-menu a{
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+}

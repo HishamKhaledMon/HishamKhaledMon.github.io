@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Learn more about Tickwell, a simple and free study timer designed to help you focus and organize your study time.">
+
+    <meta name="keywords" content="Tickwell, study timer, focus timer, study, productivity, Pomodoro">
+
+    <meta name="author" content="Hesham Khaled">
+
+    <title>About Tickwell</title>
+
+    <link rel="icon" type="image/png" href="./brain.png">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Tickwell Menu -->
+    <div class="menu-container">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            <span class="arrow">▼</span>
+        </button>
+
+        <nav class="dropdown-menu" id="dropdownMenu">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Tickwell</a>
+
+            <a href="how-to-use.html">How to Use</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- About Tickwell -->
+    <main class="about-page">
+
+        <img
+            src="./brain.png"
+            alt="Tickwell"
+            class="about-logo"
+        >
+
+        <h1>About Tickwell</h1>
+
+        <p>
+            Tickwell is a simple and free study timer designed to help you
+            focus on your tasks and organize your study time.
+        </p>
+
+        <p>
+            With a clean and easy-to-use interface, Tickwell lets you start
+            a study session, track your time, and stay focused without
+            unnecessary distractions.
+        </p>
+
+        <h2>Why Tickwell?</h2>
+
+        <p>
+            Tickwell was created to make studying easier and more organized.
+            Whether you are studying for school, university, or working on
+            personal projects, you can use Tickwell to manage your time
+            and maintain your focus.
+        </p>
+
+        <h2>Simple. Focused. Free.</h2>
+
+        <p>
+            Tickwell focuses on providing the essential tools you need for
+            a productive study session while keeping the experience simple
+            and distraction-free.
+        </p>
+
+    </main>
+
+
+    <script>
+        /* Remember Theme */
+        try {
+            if (localStorage.getItem("theme") === "light") {
+                document.body.classList.add("light-mode");
+            }
+        } catch (e) {}
+        
+        const menuButton = document.getElementById("menuButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        const menuContainer = document.querySelector(".menu-container");
+
+        menuButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            menuContainer.classList.toggle("open");
+
+            const isOpen = menuContainer.classList.contains("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!menuContainer.contains(event.target)) {
+                menuContainer.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                menuContainer.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
+
+</body>
+</html>

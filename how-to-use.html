@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Learn how to use Tickwell study timer to organize your study sessions and stay focused.">
+
+    <meta name="keywords" content="Tickwell, how to use Tickwell, study timer, focus timer, study">
+
+    <meta name="author" content="Hesham Khaled">
+
+    <title>How to Use Tickwell</title>
+
+    <link rel="icon" type="image/png" href="./brain.png">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Tickwell Menu -->
+    <div class="menu-container">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            <span class="arrow">▼</span>
+        </button>
+
+        <nav class="dropdown-menu" id="dropdownMenu">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Tickwell</a>
+
+            <a href="how-to-use.html">How to Use</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- How to Use Tickwell -->
+    <main class="about-page">
+
+        <img
+            src="./brain.png"
+            alt="Tickwell"
+            class="about-logo"
+        >
+
+        <h1>How to Use Tickwell</h1>
+
+        <p>
+            Tickwell is designed to make studying simple and focused.
+            Follow these steps to start using the timer.
+        </p>
+
+
+        <h2>1. Start the Timer</h2>
+
+        <p>
+            Open Tickwell and press the <strong>Start</strong> button
+            to begin your study session.
+        </p>
+
+
+        <h2>2. Focus on Your Work</h2>
+
+        <p>
+            Once the timer starts, focus on your study, reading,
+            homework, or any task you want to complete.
+        </p>
+
+
+        <h2>3. Pause the Timer</h2>
+
+        <p>
+            Press the <strong>Stop</strong> button whenever you want
+            to pause your study session.
+        </p>
+
+
+        <h2>4. Reset the Timer</h2>
+
+        <p>
+            Press the <strong>Reset</strong> button to return the timer
+            to 00:00:00 and start a new session.
+        </p>
+
+
+        <h2>5. Change the Theme</h2>
+
+        <p>
+            Use the theme button to switch between Dark Mode and
+            Bright Mode according to your preference.
+        </p>
+
+
+        <h2>6. Use Fullscreen Mode</h2>
+
+        <p>
+            Press the fullscreen button to make the timer fill the
+            screen and reduce distractions while studying.
+        </p>
+
+
+        <h2>Study Tips</h2>
+
+        <p>
+            Choose a specific task before starting the timer and try
+            to stay focused until your study session is finished.
+        </p>
+
+        <p>
+            You can use Tickwell for short study sessions or longer
+            periods depending on your schedule.
+        </p>
+
+    </main>
+
+    <script>
+
+        /* Remember Theme */
+        try {
+            if (localStorage.getItem("theme") === "light") {
+                document.body.classList.add("light-mode");
+            }
+        } catch (e) {}
+        
+        const menuButton = document.getElementById("menuButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        const menuContainer = document.querySelector(".menu-container");
+
+        menuButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            menuContainer.classList.toggle("open");
+
+            const isOpen = menuContainer.classList.contains("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!menuContainer.contains(event.target)) {
+                menuContainer.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                menuContainer.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
+
+</body>
+</html>
